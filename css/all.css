@@ -15,7 +15,12 @@ body {
     background-color: #fff;
     font: 16px/1.3 sans-serif;
 }
+h1, h2, h3 {
+    font-weight: normal;
+    margin: 0 0 15px;
+}
 h1 {
+    font-size: 40px;
     margin: 0 0 15px;
     font-weight: normal;
 }
@@ -51,6 +56,7 @@ h1 {
     height: 300px;
     border-radius: 50%;
     border: 7px solid #fff;
+    margin: 0 0 30px;
 }
 .dosier__avatar img {
     width: 100%;
@@ -68,7 +74,7 @@ h1 {
 .pj-item__image {
     flex: 0 0 350px;
     height: 200px;
-    margin: 0 30px 0 0;
+    margin: 0 30px 15px 0;
     border: 10px solid #f2f2f2;
     border-radius: 25px;
     overflow: hidden;
@@ -107,4 +113,33 @@ h1 {
 }
 .pj-item__nav a:hover {
     text-decoration: none;
+}
+@media(max-width: 767px) {
+    .dosier__avatar {
+        width: 200px;
+        height: 200px;
+    }
+    .dosier::before {
+        height: 170px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    .pj-item__image {
+        flex: 0 0 250px;
+        height: 150px;
+        border-width: 7px;
+        border-radius: 15px;
+    }
+}
+@media(max-width: 600px) {
+    .pj-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pj-item__image {
+        height: 150px;
+        width: 250px;
+        flex: 1;
+    }
 }
