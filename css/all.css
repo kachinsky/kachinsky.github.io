@@ -81,7 +81,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(100% / var(--column) - var(--gap-x)), 1fr));
     grid-auto-rows: minmax(120px, auto);
-    gap: var(--gap-x) var(--gap-x);
+    gap: var(--gap-y) var(--gap-x);
 }
 .pj-item__image {
     padding-top: 50%;
@@ -136,6 +136,12 @@ p {
 .pj-item__nav a:hover {
     text-decoration: none;
 }
+@media (max-width: 1024px) {
+    .projects {
+        --column: 2;
+        --gap-x: 20px;
+    }
+}
 @media (max-width: 767px) {
     .dosier__avatar {
         width: 200px;
@@ -150,5 +156,10 @@ p {
     .pj-item__image {
         border-width: 7px;
         border-radius: 15px;
+    }
+}
+@media (max-width: 450px) {
+    .projects {
+        --column: 1;
     }
 }
