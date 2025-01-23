@@ -1,5 +1,7 @@
 :root {
     --bg-main: #e7efff;
+    --bg-theme: #bac4d9;
+    --bg-theme-hover: #a67aed;
 }
 *,
 *::after,
@@ -23,12 +25,26 @@ h1,
 h2,
 h3 {
     font-weight: normal;
-    margin: 0 0 15px;
+    margin: 0 0 25px;
 }
 h1 {
     font-size: 40px;
     margin: 0 0 15px;
     font-weight: normal;
+}
+h2 span {
+    position: relative;
+    padding: 0 0 5px;
+    display: inline-block;
+}
+h2 span:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--bg-theme-hover);
 }
 p {
     margin: 0 0 15px;
@@ -79,7 +95,7 @@ p {
     --gap-x: 40px;
     --gap-y: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(100% / var(--column) - var(--gap-x)), 1fr));
+    grid-template-columns: repeat(var(--column), 1fr);
     grid-auto-rows: minmax(120px, auto);
     gap: var(--gap-y) var(--gap-x);
 }
@@ -87,14 +103,14 @@ p {
     padding-top: 50%;
     position: relative;
     margin: 0 0 15px;
-    border: 7px solid #bac4d9;
+    border: 7px solid var(--bg-theme);
     border-radius: 25px;
     overflow: hidden;
     display: block;
     transition: all 0.2s ease;
 }
 .pj-item__image:hover {
-    border-color: #a67aed;
+    border-color: var(--bg-theme-hover);
 }
 .pj-item__image img {
     position: absolute;
